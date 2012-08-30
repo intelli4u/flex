@@ -1,4 +1,4 @@
-# @(#) $Header$ (LBL)
+# @(#) $Header: /projects/cvsroot/src/router/flex/Makefile.in,v 1.2 2001/08/09 21:22:13 gmo Exp $ (LBL)
 
 @SET_MAKE@
 
@@ -18,6 +18,9 @@ CFLAGS = @CFLAGS@
 CPPFLAGS = @CPPFLAGS@
 DEFS = @DEFS@
 LDFLAGS = 
+ifeq ($(strip $(DOSTATIC)),true)
+    LDFLAGS += --static
+endif
 LIBS = @LIBS@
 
 # Installation targeting.  Files will be installed under the tree
